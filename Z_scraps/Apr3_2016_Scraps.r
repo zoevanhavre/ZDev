@@ -15,6 +15,8 @@ git push origin master
   # devtools::use_package("dplyr")
   devtools::use_package("mvnfast")
 
+
+
   # Update documentation
   devtools::document()
 
