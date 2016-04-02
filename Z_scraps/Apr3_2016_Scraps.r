@@ -5,6 +5,12 @@ git remote add origin https://github.com/zoevanhavre/ZDev.git
 git pull origin master
 git push origin master
 
+# workflow
+git add -A
+git commit -m 'commit description'
+git push
+
+
 ## building package
   install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
 
@@ -132,7 +138,7 @@ Zmix_main<-function(
     # Input .values
      if (.it==1){
         # iteration=1, initiallize input values
-        init.Z<-  initiate_Z(y,k,n, init.method)
+        init.Z<-          initiate_Z(y,k,n, init.method)
         input.values<-    initiate_values(init.Z, y,n, k,r)
           ns<-  input.values$ns
           ybar<-input.values$ybar

@@ -4,16 +4,16 @@
 \alias{initiate_Z}
 \title{Initiate the allocations for MCMC}
 \usage{
-initiate_Z(x, k, n, method = c("Kmeans", "random", "single"))
+initiate_Z(x, k, method = c("Kmeans", "random", "single"))
 }
 \arguments{
 \item{x}{data}
 
 \item{k}{Number of groups to include}
 
-\item{n}{value}
-
 \item{method}{Type of initiallization: Kmeans, random, or single}
+
+\item{n}{value}
 
 \item{m=1}{number of vectors to generate}
 }

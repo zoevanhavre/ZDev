@@ -13,9 +13,9 @@
 
 Zmix_main<-function(
           y,
-          iterations = 2000,
-          k = 10,
-          alphas = c(1/2^(c(6, 10, 30))),
+          iterations = 20,
+          k = 5,
+          alphas = c(1/2^(c(10, 30))),
           tau = 0.1,
           burn = 500,
           init.method = "Kmeans",

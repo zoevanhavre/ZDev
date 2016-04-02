@@ -14,13 +14,17 @@
 #'
 
 
-initiate_Z<-function( x, k, n, method=c("Kmeans", "random", "single")){
+initiate_Z<-function( x, k, method=c("Kmeans", "random", "single")){
+  # get n
+  Univ<-ifelse(is.vector(x), TRUE , FALSE)
+  n<-ifelse(Univ, length(x), dim(x)[1])
+
   if(method=="Kmeans"){
   init.allocations<-  as.vector(kmeans(x, centers=k)$cluster)
   } else if (method=="random"){
     init.allocations<-  base::sample(c(1:k), n, replace=TRUE)
   } else if (method=="single"){
-    init.allocations<-  rep(1, n)
+    init.allocations<-  rep(as.integer(1), n)
   }
   return(init.allocations)
 }
