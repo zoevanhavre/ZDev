@@ -7,7 +7,7 @@ git push origin master
 
 # workflow
 git add -A
-git commit -m 'commit description'
+git commit -m 'adding getYbar and test'
 git push
 
 
@@ -39,14 +39,24 @@ git push
                   Covs = list( matrix(c(10,0.1,0.1,0.5), nrow=2),
                   matrix(c(0.5,0.1,0.1,10), nrow=2)),
                   P=c(0.7,0.3),
-                  N=50)$Y
-
-
+                  N=20)$Y
 
 ########
 # mvn workflow inside function
 
-y<-ym
+y = ym
+k = 5
+iterations = 20
+alphas = c(1/2^(c(10, 30)))
+tau = 0.1
+burn = 10
+init.method = "Kmeans"
+verbose = TRUE
+
+.it<-1
+.ch<-1
+
+
 
 
 

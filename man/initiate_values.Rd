@@ -4,18 +4,18 @@
 \alias{initiate_values}
 \title{Initiate the allocations for MCMC}
 \usage{
-initiate_values(ZZ, y, n, k, r)
+initiate_values(Z, y, k, r)
 }
 \arguments{
-\item{ZZ}{data}
+\item{Z}{allocations}
 
 \item{y}{Number of groups to include}
-
-\item{n}{value}
 
 \item{k}{value}
 
 \item{r}{value}
+
+\item{n}{value}
 }
 \value{
 List of values needed to update parameters

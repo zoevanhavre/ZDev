@@ -1,7 +1,7 @@
 #' Initiate the allocations for MCMC
 #'
 #' ...
-#' @param ZZ data
+#' @param Z allocations
 #' @param y Number of groups to include
 #' @param n value
 #' @param k value
@@ -13,8 +13,12 @@
 #' @examples
 #'
 
-initiate_values<-function(ZZ, y,n, k, r){
-  IndiZ <-  (ZZ == matrix((1:k), nrow = n, ncol = k, byrow = T))
+initiate_values<-function(Z, y, k, r){
+  Univ<-ifelse(is.vector(x), TRUE , FALSE)
+  n<-ifelse(Univ, length(x), dim(x)[1])
+
+
+  IndiZ <-  (Z == matrix((1:k), nrow = n, ncol = k, byrow = T))
   ns <-    IndiZ %>% apply(., 2, sum)	# size of each group, including empties
 
   .Ysplit<- replicate(k, list())	#storage to group Y's
@@ -26,7 +30,7 @@ initiate_values<-function(ZZ, y,n, k, r){
 
   if(r>1){
     for (.i in 1:k){
-      .Ysplit[[.i]]<-y[ZZ==.i,]
+      .Ysplit[[.i]]<-y[Z==.i,]
       if (ns[.i]>1){					# for groups with >1 obsevations
         ybar[[.i]]<- as.matrix(t(apply(.Ysplit[[.i]], 2, mean)))
         } else if (ns[.i]==1){

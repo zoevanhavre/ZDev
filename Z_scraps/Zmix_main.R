@@ -69,11 +69,24 @@ if(verbose){ paste("The data contains", r, "dimension(s)")%>%print() }
 
 
 ### Update inputs needed
-     if (.it==1){
-        # iteration=1, initiallize input values
+      #ns: number of obs in each group (inc. 0)
+      #mvn: IndiZ, ybar, WkZ
+      #univ: sx,
+
+    # iteration=1, initiallize input values
+    if (.it==1){
+       init.Z <- initiate_Z(y,k, init.method)
+       ns     <- getNK(init.Z, k)
+      ybar    <- GetYbar(y, init.Z, k, ns)
         } else {
         # Update given current pars
+        ns<-getNK(Zs[[.ch]][[.it]], k)
+
         }
+
+    # GIBBS UPDATE --> Weights
+        Ps[[.ch]][[.it]] <- rdirichlet(ns+alphas[.ch])
+
 
    } # iterations
 
