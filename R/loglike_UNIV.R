@@ -11,7 +11,7 @@
 #' @examples
 #'
 
-loglike_UNIV<-function(z, y, Weights, Means, Cov){
+loglike_UNIV<-function(z, y, Weights, Means, Variance){
     # reduce to occupied groups
     non0id<- table(z) %>% names() %>% as.numeric()
     Loglike =  0

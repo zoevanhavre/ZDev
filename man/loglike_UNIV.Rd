@@ -4,12 +4,12 @@
 \alias{loglike_UNIV}
 \title{Update the allocation probabilities for multivariate Gaussian mixture}
 \usage{
-loglike_UNIV(.Zs, y, Ps, Mus, Cov)
+loglike_UNIV(z, y, Weights, Means, Variance)
 }
 \arguments{
-\item{Cov}{input}
-
 \item{Mu}{Means}
+
+\item{Cov}{input}
 
 \item{Pi}{input}
 
