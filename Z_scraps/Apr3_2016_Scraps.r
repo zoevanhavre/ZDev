@@ -7,8 +7,9 @@ git push origin master
 
 # workflow
 git add -A
-git commit -m 'add getSx and tests'
+git commit -m 'add loglike_UNIV tests'
 git push
+
 
 ## building package
   install.packages(c("devtools", "roxygen2", "testthat", "knitr"))

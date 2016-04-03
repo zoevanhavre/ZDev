@@ -11,12 +11,13 @@
 #' @examples
 #'
 
-loglike_UNIV<-function(.Zs, y, Ps, Mus , Cov){
-    non0id<- table(.Zs) %>% names() %>% as.numeric()
+loglike_UNIV<-function(z, y, Weights, Means, Cov){
+    # reduce to occupied groups
+    non0id<- table(z) %>% names() %>% as.numeric()
     Loglike =  0
     for (i in 1:length(y)){
     Loglike<-Loglike+ log(
-      sum( Ps[non0id]*dnorm(y[i], mean=Mus[non0id], sd=sqrt(Cov[non0id])))
+      sum( Weights[non0id]*dnorm(y[i], mean=Means[non0id], sd=sqrt(Variance[non0id])))
       )
     }
     return(Loglike)
