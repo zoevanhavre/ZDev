@@ -7,7 +7,7 @@ git push origin master
 
 # workflow
 git add -A
-git commit -m 'adding getYbar tests'
+git commit -m 'add getSx and tests'
 git push
 
 ## building package
