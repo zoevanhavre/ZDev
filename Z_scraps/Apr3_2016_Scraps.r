@@ -7,21 +7,16 @@ git push origin master
 
 # workflow
 git add -A
-git commit -m 'adding getYbar and test'
+git commit -m 'adding getYbar tests'
 git push
-
 
 ## building package
   install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
-
-  devtools::use_testthat()
-
   # devtools::create("/Users/zoevanhavre/Documents/Zdev")
-  ## add required package
-  # devtools::use_package("dplyr")
-  devtools::use_package("mvnfast")
-
-
+## set up testing framework
+  # devtools::use_testthat()
+## add required packages
+  # devtools::use_package("mvnfast")
 
   # Update documentation
   devtools::document()
