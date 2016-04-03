@@ -6,10 +6,11 @@ git pull origin master
 git push origin master
 
 # workflow
+devtools::test()
+devtools::document(); devtools::build()
 git add -A
-git commit -m 'add loglike_UNIV tests'
+git commit -m 'add loglike_UNIV tests 3'
 git push
-
 
 ## building package
   install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
@@ -189,7 +190,7 @@ Zmix_main<-function(
 
     # Variance
         for (i in 1:k){if (is.na(Mus[[.ch]][[.it]][i])){ Mus[[.ch]][[.it]][i]<-0 }}
-        sv<-getSV(Mus[[.ch]][[.it]],n, y, IndiZ)
+        sv<-getSV(Mus[[.ch]][[.it]], y,  Zs[[.ch]][[.it]])
       Covs[[.ch]][[.it]]<- rinvgamma(k, a+(ns+1)/2,	b+0.5*tau*(Mus[[.ch]][[.it]]-lambda)^2+0.5*sv)
      }
 

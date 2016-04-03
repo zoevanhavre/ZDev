@@ -2,9 +2,9 @@
 % Please edit documentation in R/getSV.R
 \name{getSV}
 \alias{getSV}
-\title{Update the allocation probabilities for multivariate Gaussian mixture}
+\title{Update / get sv}
 \usage{
-getSV(.mus, n, y, IndiZ)
+getSV(Means, y, z)
 }
 \arguments{
 \item{Mu}{Means}

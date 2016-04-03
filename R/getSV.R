@@ -1,4 +1,4 @@
-#' Update the allocation probabilities for multivariate Gaussian mixture
+#' Update / get sv
 #'
 #' ...
 #' @param Mu Means
@@ -12,8 +12,9 @@
 #'
 
 
-
-getSV<-function(.mus, n, y, IndiZ){
-  .bmu <- rep(.mus, n) %>%  matrix(. , ncol =n) %>% t()
+getSV<-function(Means, y, z){
+  n     <- length(y)
+  IndiZ <- suppressWarnings((z == matrix((1:k), nrow = n, ncol = k, byrow = T)))
+  .bmu <- rep(Means, n) %>%  matrix(. , ncol =n) %>% t()
   apply((y*IndiZ-.bmu*IndiZ)^2, 2, sum)
   }
