@@ -14,7 +14,7 @@
 #'
 
 
-initiate_Z<-function( x, k, method=c("Kmeans", "random", "single")){
+initiate_Z<-function( x, k, method=c("Kmeans", "random", "single", "uniform")){
   # get n
   Univ<-ifelse(is.vector(x), TRUE , FALSE)
   n<-ifelse(Univ, length(x), dim(x)[1])
@@ -25,6 +25,11 @@ initiate_Z<-function( x, k, method=c("Kmeans", "random", "single")){
     init.allocations<-  base::sample(c(1:k), n, replace=TRUE)
   } else if (method=="single"){
     init.allocations<-  rep(as.integer(1), n)
+  } else if (method=="uniform"){
+    init.allocations<-c()
+    for (i in 1:k) {
+      init.allocations <- c(init.allocations, rep(i, ceiling(n/k) ))}
+    init.allocations<-init.allocations[1:n]
   }
   return(init.allocations)
 }

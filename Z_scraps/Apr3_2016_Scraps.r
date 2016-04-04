@@ -5,12 +5,14 @@ git remote add origin https://github.com/zoevanhavre/ZDev.git
 git pull origin master
 git push origin master
 
+
 # workflow
 devtools::test()
 devtools::document(); devtools::build()
 git add -A
-git commit -m 'add loglike_UNIV tests 3'
+git commit -m 'add function and test for initiate univ gibbs (z and pars)'
 git push
+zoevanhavre
 
 ## building package
   install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
@@ -28,7 +30,7 @@ git push
   devtools::document(); devtools::build()
 # WORKSPACE
   # y for testin
-  yu<-cbind(rnorm(20, 1, 1), rnorm(30, 3, 2))
+  yu<-cbind(rnorm(5, 1, 1), rnorm(10, 3, 2))
   yu<-yu[sample(1:length(yu), length(yu))] # randomize
 
   # mvn
@@ -55,6 +57,20 @@ verbose = TRUE
 
 
 
+########
+# univ workflow inside function
+
+y = yu
+k = 5
+iterations = 20
+alphas = c(1/2^(c(10, 30)))
+tau = 0.1
+burn = 10
+init.method = "Kmeans"
+verbose = TRUE
+
+.it<-1
+.ch<-1
 
 
 

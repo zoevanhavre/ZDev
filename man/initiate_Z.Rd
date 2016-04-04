@@ -4,7 +4,7 @@
 \alias{initiate_Z}
 \title{Initiate the allocations for MCMC}
 \usage{
-initiate_Z(x, k, method = c("Kmeans", "random", "single"))
+initiate_Z(x, k, method = c("Kmeans", "random", "single", "uniform"))
 }
 \arguments{
 \item{x}{data}

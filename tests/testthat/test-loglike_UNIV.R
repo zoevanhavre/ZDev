@@ -8,9 +8,9 @@ test_that("test loglike_UNIV", {
   Var     <- c(.5, 1)
 
   loglike_UNIV(z, y, Weights, Means, Var ) %>% length() %>% expect_equal(., 1)
-  loglike_UNIV(z, y, Weights, Means, Cov ) %>% class() %>% expect_equal(., "numeric")
+  loglike_UNIV(z, y, Weights, Means, Var ) %>% class() %>% expect_equal(., "numeric")
 
   z<- c(2,2,2,2,2)
-  loglike_UNIV(z, y, Weights, Means, Cov ) %>% length() %>% expect_equal(., 1)
+  loglike_UNIV(z, y, Weights, Means, Var ) %>% length() %>% expect_equal(., 1)
 
 })
